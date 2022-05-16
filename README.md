@@ -7,15 +7,13 @@
 | Column              | Type   | Options     |
 | ------------------  | ------ | ----------- |
 | nickname            | string | null: false |
-| email               | string | null: false |
+| email               | string | null: false unique: true|
 | encrypted_password  | string | null: false |
 |family_name          |string  | null: false |
 |first_name           |string  | null: false |
 |family_name_kana     |string  | null: false |
 |first_name_kana      |string  | null: false |
-|birth_year           |string  | null: false |
-|birth_month          |string  | null: false |
-|birth_day            |string  | null: false |
+|birth_day           |datetime	  | null: false |
 ### Association
 
 - has_many :items
@@ -24,18 +22,17 @@
 
 ## items テーブル
 
-|      Column            | Type      | Options     |
-| ---------------------- | --------- | -----------  |
-| user                   | references| null: false, foreign_key: true |
-|item_image              | string    | null: false |
-|item_name               | string    | null: false |
-|explanation(説明)        | text      | null: false |
-|category                | string    | null: false |
-|condition               | string    | null: false |
-|send_charge（配送料の負担）| integer   | null: false |
-|send_area(発送元地域)     | string    | null: false |
-|Days_ship(発送までの日数)  |integer   | null: false |
-|price                    |integer   | null: false |
+|      Column               | Type      | Options     |
+| ------------------------- | --------- | -----------  |
+| user                      | references| null: false, foreign_key: true |
+|item_name                  | string    | null: false |
+|explanation(説明)           | text      | null: false |
+|category_id                |  integer  | null: false |
+|condition_id               |  integer  | null: false |
+|send_charge_id（配送料の負担）| integer   | null: false |
+|prefecture_id(発送元地域)    | integer   | null: false |
+|days_ship_id(発送までの日数)  | integer  | null: false |
+|price                       | integer  | null: false |
 ### Association
 
 - has_many :users
@@ -61,15 +58,13 @@ ______________________
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| user             | references | null: false, foreign_key: true |
-| item             | references | null: false, foreign_key: true |
 |buy               | references | null: false, foreign_key: true |
-| post_code        | integer    | null: false                    |
-| prefecture(県)   | string      | null: false                    |
+| post_code        | string    | null: false                    |
+| prefecture_id(県) | integer      | null: false                    |
 | city             | string      | null: false                    |
 | address          | string      | null: false                    |
-|building_name(建物)| string      | null: false                    |
-|phone_number      |  integer    | null: false                     |
+|building_name(建物)| string      |                                 |
+|phone_number      |  string    | null: false                     |
 
 ### Association
 
