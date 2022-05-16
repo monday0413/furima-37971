@@ -13,11 +13,11 @@
 |first_name           |string  | null: false |
 |family_name_kana     |string  | null: false |
 |first_name_kana      |string  | null: false |
-|birth_day           |datetime	  | null: false |
+|birth_day            |date	  | null: false |
 ### Association
 
 - has_many :items
-- has_many :buy_records
+- has_many :buys
 
 
 ## items テーブル
@@ -35,26 +35,26 @@
 |price                       | integer  | null: false |
 ### Association
 
-- has_many :users
-- belongs_to :buy 
+- belongs_to :user
+- has_many :buys 
 
 
 ______________________
-## buy （購入記録情報） テーブル
+## buys （購入記録情報） テーブル
 
 | Column  | Type       | Options                        |
 | ------  | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
-|send     | references | null: false, foreign_key: true |
+| send    | references | null: false,                   |
 | item    | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :item
-- has_many :users
-- belongs_to :send_info
+- belongs_to :user
+- belongs_to :send
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-## send(発送先情報) テーブル
+## sends(発送先情報) テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
