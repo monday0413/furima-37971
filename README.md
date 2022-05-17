@@ -36,8 +36,8 @@
 ### Association
 
 - belongs_to :user
-- has_many :buys 
-
+- has_one :buy
+<!-- - belongs_to :buy  -->
 
 ______________________
 ## buys （購入記録情報） テーブル
@@ -51,7 +51,7 @@ ______________________
 
 - belongs_to :item
 - belongs_to :user
-- belongs_to :send
+- has_one :send
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 ## sends(発送先情報) テーブル
