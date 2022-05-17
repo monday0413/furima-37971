@@ -37,7 +37,7 @@
 
 - belongs_to :user
 - has_one :buy
-<!-- - belongs_to :buy  -->
+
 
 ______________________
 ## buys （購入記録情報） テーブル
