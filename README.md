@@ -45,16 +45,15 @@ ______________________
 | Column  | Type       | Options                        |
 | ------  | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
-| send    | references | null: false,                   |
 | item    | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :item
 - belongs_to :user
-- has_one :send
+- has_one :address
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-## sends(発送先情報) テーブル
+## addresses（発送先情報) テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
