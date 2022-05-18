@@ -9,10 +9,10 @@ class User < ApplicationRecord
                       
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :nickname, presence: true
-  validates :family_name, presence: true, format: { with: VALID_JNAME_REGEX }
-  validates :first_name, presence: true, format: { with: VALID_JNAME_REGEX }
-  validates :family_name_kana, presence: true, format: { with: VALID_KANA_REGEX }
-  validates :first_name_kana, presence: true, format: { with: VALID_KANA_REGEX }
+  validates :family_name, presence: true, format: { with: VALID_JNAME_REGEX,allow_blank: true }
+  validates :first_name, presence: true, format: { with: VALID_JNAME_REGEX,allow_blank: true }
+  validates :family_name_kana, presence: true, format: { with: VALID_KANA_REGEX,allow_blank: true }
+  validates :first_name_kana, presence: true, format: { with: VALID_KANA_REGEX,allow_blank: true }
   validates :birth_day, presence: true
 end
 
