@@ -38,7 +38,9 @@
 - belongs_to :user
 - has_one :buy
 
-
+# bundle exec rspec spec/models/item_spec.rb 
+# @tweet.valid?
+# @tweet.errors.full_messages
 ______________________
 ## buys （購入記録情報） テーブル
 
