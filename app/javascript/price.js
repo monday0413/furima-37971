@@ -6,8 +6,8 @@ window.addEventListener('load', function(){
 
 
   itemPrice.addEventListener('input', () => {
-    addTaxPrice.innerHTML = Math.round(itemPrice.value * 0.1 );
-    profit.innerHTML = Math.round(itemPrice.value - Math.round(itemPrice.value * 0.1 ))
+    addTaxPrice.innerHTML = Math.floor(itemPrice.value * 0.1 );
+    profit.innerHTML = Math.floor(itemPrice.value - Math.floor(itemPrice.value * 0.1 ))
 
   })
 
