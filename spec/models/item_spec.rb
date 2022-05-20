@@ -27,30 +27,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
-      it 'category_id空では出品できない' do
-        @item.category_id = ''
+      it 'category_idが1では出品できない' do
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
-      it 'condition_id空では出品できない' do
-        @item.condition_id = ''
+      it 'condition_idが1では出品できない' do
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
-      it 'send_charge_id空では出品できない' do
-        @item.send_charge_id = ''
+      it 'send_charge_idが1では出品できない' do
+        @item.send_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Send charge can't be blank")
+        expect(@item.errors.full_messages).to include("Send charge must be other than 1")
       end
-      it 'prefecture_id空では出品できない' do
-        @item.prefecture_id = ''
+      it 'prefecture_idが1では出品できない' do
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
-      it 'days_ship_id空では出品できない' do
-        @item.days_ship_id = ''
+      it 'days_ship_idが1では出品できない' do
+        @item.days_ship_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days ship can't be blank")
+        expect(@item.errors.full_messages).to include("Days ship must be other than 1")
       end
       it 'price空では出品できない' do
         @item.price = ''
