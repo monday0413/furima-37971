@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+
     @items = Item.all
     @items = Item.order('created_at DESC')
   end
@@ -22,6 +23,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
 
   private
 
