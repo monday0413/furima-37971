@@ -42,7 +42,7 @@
 # @tweet.valid?
 # @tweet.errors.full_messages
 ______________________
-## buys （購入記録情報） テーブル
+## orders （購入記録情報） テーブル
 
 | Column  | Type       | Options                        |
 | ------  | ---------- | ------------------------------ |
@@ -59,12 +59,12 @@ ______________________
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-|buy               | references | null: false, foreign_key: true |
-| post_code        | string    | null: false                    |
-| prefecture_id(県) | integer      | null: false                    |
+| order            | references | null: false, foreign_key: true |
+| post_code        | string     | null: false                    |
+| prefecture_id(県)| integer     | null: false                    |
 | city             | string      | null: false                    |
-| address          | string      | null: false                    |
-|building_name(建物)| string      |                                 |
+| address_number   | string      | null: false                    |
+|building_name(建物)| string     |                                 |
 |phone_number      |  string    | null: false                     |
 
 ### Association
