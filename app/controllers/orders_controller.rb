@@ -22,7 +22,7 @@ end
 private
 
   def order_params
-  params.require(:order_form).permit(:order_id, :price,:postal_code, :prefecture_id, :city, :address_number, :building_name,:phone_number).merge(user_id: current_user.id,item_id: @item.id)
+  params.require(:order_form).permit( :price,:post_code, :prefecture_id, :city, :address_number, :building_name,:phone_number).merge(user_id: current_user.id,item_id: @item.id)
   end
   
   def move_to_top
