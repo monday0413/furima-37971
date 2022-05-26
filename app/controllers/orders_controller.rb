@@ -13,8 +13,8 @@ def create
   if @order_form.valid?
     @order_form.save
     redirect_to root_path
-  else
-    render :index
+  # else
+  #   render :index
   end
 end
 
