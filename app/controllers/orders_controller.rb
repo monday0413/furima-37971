@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :item_set
-  before_action :move_to_top
+  before_action :authenticate_user!, only: [:index, :create]
+  before_action :item_set, only: [:index, :create]
+  before_action :move_to_top, only: [:index, :create]
 
   def index
     @order_form = OrderForm.new
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_top
-    redirect_to root_path if @item.user_id == current_user.id
+    redirect_to root_path if @item.user_id == current_user.id || @item.order.present?
   end
 
   def item_set
