@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+    @item = Item.find(params[:item_id]) #追加
     if @comment.save
-      redirect_to item_path(params[:item_id])
-    end
+      CommentChannel.broadcast_to @item, { comment: @comment, user: @comment.user } #追加  
   end
 
   private
